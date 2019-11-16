@@ -1,28 +1,30 @@
 ---
-title: "Mantis_Shrimp_Mini_Project"
+title: "Mantis Shrimp Mini Project"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+---
+Many types of animals develop morphological traits to partake in ritualized combat, which is essentially combat over territory or rights. These traits are usually meant for offence, for example horns on a deer. Examples of distinct armour for ritualized fighting are rare, but mantis shrimp present an interesting case in which their unique form of ritualized combat, termed telson sparring, may have coevolved with specialized morphological armour.
+During telson sparring, mantis shrimp take turns striking with their raptorial appendages against the telson, or tailplate, of their opponent. Individuals direct nearly every strike to the telson, and this is facilitated by the recipient assuming a coiled position referred to as a ‘telson coil’
+---
+
+## Required Packages
+
+```{r, message=FALSE, warning=FALSE}
+library(dplyr)
+library(ggplot2)
 ```
 
-## R Markdown
+## Data
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r, cache=TRUE}
+data_1 <- read.csv("https://ndownloader.figshare.com/files/16851587")
+data_2 <- read.csv("https://ndownloader.figshare.com/files/16851584")
+head(data_1)
+head(data_2)
 ```
 
-## Including Plots
+## Analysis
+```{r}
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
