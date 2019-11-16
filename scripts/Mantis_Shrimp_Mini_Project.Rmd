@@ -65,8 +65,4 @@ ggplot(big_shrimps,aes(x=mass,y=ratio))+
 ggsave("../figures/big_shrimps_figure.jpg")
 ```
 
-```{r}
-knit2html("Mantis_Shrimp_Mini_Project", output="../output/Mantis_Shrimp_Mini_Project.html")
-```
-
 
