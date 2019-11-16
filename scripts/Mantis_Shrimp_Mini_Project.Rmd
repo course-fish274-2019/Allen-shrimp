@@ -67,5 +67,6 @@ ggsave("../figures/big_shrimps_figure.jpg")
 
 ##Export
 ```{r, message=FALSE, warning=FALSE}
-knitr::knit(input="Mantis_Shrimp_Mini_Project.Rmd",output="../output/Mantis_Shrimp_Mini_Porject.html")
+rmarkdown::render(input="Mantis_Shrimp_Mini_Project.Rmd",output_dir="../output", output_format="html_document")
 ```
+
