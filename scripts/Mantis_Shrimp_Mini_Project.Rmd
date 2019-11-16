@@ -65,5 +65,9 @@ ggplot(big_shrimps,aes(x=mass,y=ratio))+
 ggsave("../figures/big_shrimps_figure.jpg")
 ```
 
+```{r}
+rmarkdown::render(input = "Mantis_Shrimp_Mini_Project.Rmd", output_format = "html_document", output_dir="../output")
+                  
+```
 
 
