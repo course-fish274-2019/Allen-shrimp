@@ -18,14 +18,16 @@ data_1 <- read.csv("https://ndownloader.figshare.com/files/16851587")
 knitr::kable(data_1)
 
 ```
+
 ## What does this data describe?
 
-Many types of animals develop morphological traits to partake in ritualized combat, which is essentially combat over territory or rights. These traits are usually meant for offence, for example horns on a deer. Examples of distinct armour for ritualized fighting are rare, but mantis shrimp present an interesting case in which their unique form of ritualized combat, termed telson sparring, may have coevolved with specialized morphological armour.
-During telson sparring, mantis shrimp take turns striking with their raptorial appendages against the telson, or tailplate, of their opponent. Individuals direct nearly every strike to the telson, and this is facilitated by the recipient assuming a coiled position referred to as a ‘telson coil’
+![Mantis Shrimp Shells](../figures/shells.gif)
+
+- Many types of animals develop morphological traits to partake in ritualized combat.
+- Mantis shrimp present an interesting case in which their unique form of ritualized combat, termed telson sparring, may have coevolved with specialized morphological armour.
+
 
 ## Slide with Bullets
-
-![Mantis-shell](../figures/shells.gif)
 
 - Bullet 1
 - Bullet 2
