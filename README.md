@@ -16,3 +16,9 @@ Files in order of use:
 
 5. output/Mantis_Shrimp_Mini_Project.html - The html file that was exported from the aforementioned Rmd file.
 6. scipts/Mantis_Shrimp_Mini_Project.html - The html file resulting from using the "knit" function in the R studio graphical user interface. 
+
+7. scripts/Mantis_Shrimp_Presentation.Rmd - The Markdown file containing the presentation for this project
+8. figures/shells.gif - A picture used in the presentation 
+
+9. output/Mantis_Shrimp_Presentation.html - The html file that was exported fom the aforementioned Rmd file. 
+10. scripts/Mantis_Shrimp_Presentation.html - The html file resulting from using the "knit" function in the R studio graphical user interafce. 
