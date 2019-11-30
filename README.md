@@ -22,3 +22,8 @@ Files in order of use:
 
 9. output/Mantis_Shrimp_Presentation.html - The html file that was exported fom the aforementioned Rmd file. 
 10. scripts/Mantis_Shrimp_Presentation.html - The html file resulting from using the "knit" function in the R studio graphical user interafce. 
+
+Plan
+1. Finish processing data (COR or impulse)
+2. Create new graphs based on said data
+3. finalize presentation and make sure it fulfills all parts of the rubric 
