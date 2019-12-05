@@ -39,6 +39,20 @@ big_shrimps <- data_1_modified %>%
 small_shrimps <- data_1_modified %>%
   group_by(species) %>%
   filter(mass < 15)
+
+appendages_data <- data_1 %>%
+  group_by(appendage) %>%
+  filter(appendage == "smasher") #strings need quotes 
+
+lm_1 <- lm(cor.telson~cor.abdomen, data_1)
+summary(lm_1)[[9]]#number assocaited with chunk 
+
+
+ggplot(data_1, aes(x=cor.abdomen,y=cor.telson))+
+  geom_point(shape=1)+
+  geom_smooth(method=lm)
+#look at claudia repo 
+  
 ```
 
 ## Figures
