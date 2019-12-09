@@ -13,74 +13,43 @@ During telson sparring, mantis shrimp take turns striking with their raptorial a
 ```{r, message=FALSE, warning=FALSE}
 library(dplyr)
 library(ggplot2)
-
 ```
 
 ## Data
-
 ```{r}
 data_1 <- read.csv("https://ndownloader.figshare.com/files/16851587")
-data_2 <- read.csv("https://ndownloader.figshare.com/files/16851584")
-
 ```
 
 ## Analysis
-I mutated data_1 to add a new column of the ratio between the telson COR and abdomen COR
-- lower ratio = telson and abdomen COR difference smaller
-- higher ratio = telson and abdomen COR differece larger (telson COR is greater)
-I then separated the data into a "small" and "big" category by filtering the mass of the shrimp. This was done to create figures with clearer axis. 
 ```{r, message=FALSE, warning=FALSE}
-data_1_modified <- mutate(data_1, ratio = (cor.telson/cor.abdomen))
 
-big_shrimps <- data_1_modified %>%
-  group_by(species) %>%
-  filter(mass > 15)
-
-small_shrimps <- data_1_modified %>%
-  group_by(species) %>%
-  filter(mass < 15)
-
-appendages_data <- data_1 %>%
+smasher_data <- data_1 %>%
   group_by(appendage) %>%
   filter(appendage == "smasher") #strings need quotes 
 
-lm_1 <- lm(cor.telson~cor.abdomen, data_1)
-summary(lm_1)[[9]]#number assocaited with chunk 
+spearer_data <- data_1 %>%
+  group_by(appendage) %>%
+  filter(appendage != "smasher")
 
+lm_1 <- lm(cor.telson~cor.abdomen, data_1) #R SQUARED
+summary(lm_1)[[9]]#number assocaited with chunk, r squared value
+
+results <- summary(lm(cor.telson~cor.abdomen, data_1)) #RETURN P VALUE
+results$coefficients[8]
 
 ggplot(data_1, aes(x=cor.abdomen,y=cor.telson))+
   geom_point(shape=1)+
   geom_smooth(method=lm)
-#look at claudia repo 
+
+ggplot(smasher_data, aes(x=cor.abdomen,y=cor.telson))+
+  geom_point(shape=1)+
+  geom_smooth(method=lm)
+
+ggplot(spearer_data, aes(x=cor.abdomen,y=cor.telson))+
+  geom_point(shape=1)+
+  geom_smooth(method=lm)
   
 ```
 
-## Figures
-The figures created use mass on the x axis and the ratio of COR between the telson and the abdomen. Geom_point and geom_smooth are used to create points and a trend line, the axis are then scaled to the minimum and maximum mass and ratio values for the small and big categories. Then, facet_wrap is used to seaparate the graphs by species. 
-```{r, message=FALSE, warning=FALSE}
-ggplot(small_shrimps,aes(x=mass,y=ratio))+
-  geom_point(shape=1)+
-  geom_smooth(method=lm)+
-  scale_x_continuous(limit=c(min(small_shrimps$mass),max(small_shrimps$mass)))+
-  scale_y_continuous(limit=c(min(small_shrimps$ratio),max(small_shrimps$ratio)))+
-  labs(x="mass(g)",y="COR Telson to Abdomen Ratio")+
-  facet_wrap(~species, scales = "free_x")
-
-ggsave("../figures/small_shrimps_figure.jpg")
-
-ggplot(big_shrimps,aes(x=mass,y=ratio))+
-  geom_point(shape=1)+
-  geom_smooth(method=lm)+
-  scale_x_continuous(limit=c(min(big_shrimps$mass),max(big_shrimps$mass)))+
-  scale_y_continuous(limit=c(min(big_shrimps$ratio),max(big_shrimps$ratio)))+
-  labs(x="mass(g)",y="COR Telson to Abdomen Ratio")+
-  facet_wrap(~species, scales = "free_x")
-
-ggsave("../figures/big_shrimps_figure.jpg")
-```
-
-```{r}
-rmarkdown::render(input = "Mantis_Shrimp_Mini_Project.Rmd", output_format = "html_document", output_dir="../output")
-```
 
 
