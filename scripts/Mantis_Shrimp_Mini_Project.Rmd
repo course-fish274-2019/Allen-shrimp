@@ -37,6 +37,18 @@ summary(lm_1)[[9]] #number assocaited with chunk, returns r squared value
 results <- summary(lm_1) 
 results$coefficients[8] #returns p value
 
+lm_2 <- lm(cor.telson~cor.abdomen, smasher_data) #linear model function 
+summary(lm_2)[[9]] #number assocaited with chunk, returns r squared value
+
+results_2 <- summary(lm_2) 
+results_2$coefficients[8] #returns p value
+
+lm_3 <- lm(cor.telson~cor.abdomen, spearer_data) #linear model function 
+summary(lm_3)[[9]] #number assocaited with chunk, returns r squared value
+
+results_3 <- summary(lm_3) 
+results_3$coefficients[8] #returns p value
+
 #Plot of all 
 ggplot(data_1, aes(x=cor.abdomen,y=cor.telson))+
   geom_point(shape=1)+

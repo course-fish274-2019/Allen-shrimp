@@ -1,27 +1,38 @@
 # Allen-shrimp
-Project purpose: to explore and understand functions in knitr and rmarkdown because they bring love and joy to all. 
+Project purpose: to explore and understand functions in knitr and rmarkdown because they bring love and joy to all. To examine data regarding Mantis Shrimp and analyze trends between telson and abdomen properties. 
 
 R packages: 
 dplyr
 ggplot2
 
-
 Files in order of use: 
-1. scripts/Draft_Scripts.R - This file is what I used as a working document to test code, specifically for plots and data processing
+1. scripts/Draft_Scripts.R - This file is what I used as a working document to test code, specifically for plots and data processing.
 
-2. scripts/Mantis_Shrimp_Mini_Project.Rmd - The Markdown file containing my purpose and explanation of code used, additionally it exports two figures and an HTML file
+2. scripts/Mantis_Shrimp_Mini_Project.Rmd - The Markdown file containing my purpose and explanation of code used. 
 
-3. figures/big_shrimps_figure.jpg - A figure showing the relationship between mass and COR telson vs. abdomen ratio. This figure represents shrimp above a certain mass.
-4. figures/small_shrimps_figure.jpg - A figure showing the relationship between mass and COR telson vs. abdomen ratio. This figure represents shrimp above a certain mass.
+3. figures/all_data.jpg - figure from ggplot, relationship between cor.telson and cor.abdomen for all species
 
-5. output/Mantis_Shrimp_Mini_Project.html - The html file that was exported from the aforementioned Rmd file.
-6. scipts/Mantis_Shrimp_Mini_Project.html - The html file resulting from using the "knit" function in the R studio graphical user interface. 
+4. figures/smasher_data.jpg - figure from ggplot, relationship between cor.telson and cor.abdomen for smashers.
 
-7. scripts/Mantis_Shrimp_Presentation.Rmd - The Markdown file containing the presentation for this project
-8. figures/shells.gif - A picture used in the presentation 
+5. figures/spearer_data.jpg - figure from ggplot, relationship between cor.telson and cor.abdomen for spearers.
 
-9. output/Mantis_Shrimp_Presentation.html - The html file that was exported fom the aforementioned Rmd file. 
-10. scripts/Mantis_Shrimp_Presentation.html - The html file resulting from using the "knit" function in the R studio graphical user interafce. 
+6. output/Mantis_Shrimp_Mini_Project.html - The html file that was exported from the aforementioned Rmd file.
+
+7. scipts/Mantis_Shrimp_Mini_Project.html - The html file resulting from using the "knit" function in the R studio graphical user interface. 
+
+8. scripts/Mantis_Shrimp_Presentation.Rmd - The Markdown file containing the presentation for this project
+
+9. figures/mantis_pic.jpg - A picture of a mantis shrimp used in the presentation.
+
+10. figues/anatomy.jpg - A diagram of mantis shrimp anatomy used in the presentation.
+
+11. figures/sparring.gif - A gif of telson sparring used in the presentation.
+
+12. figures/shells.gif - A picture of telson shells used in the presentation.
+
+13. output/Mantis_Shrimp_Presentation.html - The html file that was exported from the aforementioned Rmd file. 
+
+14. scripts/Mantis_Shrimp_Presentation.html - The html file resulting from using the "knit" function in the R studio graphical user interafce. 
 
 Plan
 1. Finish processing data (COR or impulse)
