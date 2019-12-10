@@ -42,15 +42,21 @@ ggplot(data_1, aes(x=cor.abdomen,y=cor.telson))+
   geom_point(shape=1)+
   geom_smooth(method=lm)
 
+ggsave("../figures/all_data.jpg")
+
 #Plot of Smashers
 ggplot(smasher_data, aes(x=cor.abdomen,y=cor.telson))+
   geom_point(shape=1)+
   geom_smooth(method=lm)
 
+ggsave("../figures/smasher_data.jpg")
+
 #Plot of Spearers
 ggplot(spearer_data, aes(x=cor.abdomen,y=cor.telson))+
   geom_point(shape=1)+
   geom_smooth(method=lm)
+
+ggsave("../figures/spearer_data.jpg")
   
 ```
 
