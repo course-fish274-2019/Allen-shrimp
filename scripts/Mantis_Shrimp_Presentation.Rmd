@@ -67,11 +67,14 @@ knitr::kable(data_1)
 
 ## Data Manipulation
 
+- separated species with "smasher" and "spearer" appendages by using filter()
+- Wanted to see if there were different trends between appendage types
+
 ```{r, message=FALSE, warning=FALSE, echo=TRUE}
 
 smasher_data <- data_1 %>%
   group_by(appendage) %>%
-  filter(appendage == "smasher") #strings need quotes 
+  filter(appendage == "smasher") 
 
 spearer_data <- data_1 %>%
   group_by(appendage) %>%
@@ -79,22 +82,67 @@ spearer_data <- data_1 %>%
 
 ```
 
-## Figures
+## Linear Model Function
+``` {r, message=FALSE, warning=FALSE, echo=TRUE}
 
+lm_1 <- lm(cor.telson~cor.abdomen, data_1) #linear model function 
+summary(lm_1)[[9]] #number assocaited with chunk, returns r squared value
 
-## Figure 1 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
-
-```
-
-## Figure 2
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
-
+results <- summary(lm_1) 
+results$coefficients[8] #returns p value
 
 ```
 
 
+## Figure 1 - Plot of all appendage types {.smaller}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+lm_1 <- lm(cor.telson~cor.abdomen, data_1) #linear model function 
+summary(lm_1)[[9]] #number assocaited with chunk, returns r squared value
 
+results <- summary(lm_1) 
+results$coefficients[8] #returns p value
+
+ggplot(data_1, aes(x=cor.abdomen,y=cor.telson))+
+  geom_point(shape=1)+
+  geom_smooth(method=lm)
+
+ggsave("../figures/all_data.jpg")
+
+```
+
+## Figure 2 - Plot of smashers {.smaller}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+lm_2 <- lm(cor.telson~cor.abdomen, smasher_data) #linear model function 
+summary(lm_2)[[9]] #number assocaited with chunk, returns r squared value
+
+results_2 <- summary(lm_2) 
+results_2$coefficients[8] #returns p value
+
+ggplot(smasher_data, aes(x=cor.abdomen,y=cor.telson))+
+  geom_point(shape=1)+
+  geom_smooth(method=lm)
+
+ggsave("../figures/smasher_data.jpg")
+
+```
+
+## Figure 3 - Plot of spearers {.smaller}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+lm_3 <- lm(cor.telson~cor.abdomen, spearer_data) #linear model function 
+summary(lm_3)[[9]] #number assocaited with chunk, returns r squared value
+
+results_3 <- summary(lm_3) 
+results_3$coefficients[8] #returns p value
+
+ggplot(spearer_data, aes(x=cor.abdomen,y=cor.telson))+
+  geom_point(shape=1)+
+  geom_smooth(method=lm)
+
+ggsave("../figures/spearer_data.jpg")
+  
+```
+
+##Thank you 
 
 
 
