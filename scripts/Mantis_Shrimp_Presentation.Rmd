@@ -13,6 +13,28 @@ library(dplyr)
 library(ggplot2)
 ```
 
+## What is a Mantis Shrimp?
+
+![](../figures/mantis_pic.jpg)
+
+- Mantis shrimps or stomatopods
+- Marine crustaceans of the order Stomatopoda 
+- Some species have blunt forelimbs while others have sharp ones
+
+## External Anatomy
+
+![](../figures/anatomy.jpg)
+
+- Appendages
+- Telson
+
+## Telson Sparring
+
+![](../figures/sparring.gif)
+
+- During telson sparring, mantis shrimp take turns striking with their appendages against the telson of their opponent
+- Individuals direct nearly every strike to the telson, and this is facilitated by the recipient assuming a coiled position referred to as a ‘telson coil’
+
 ## Data used
 
 ```{r}
@@ -27,6 +49,10 @@ knitr::kable(data_1)
 
 - Many types of animals develop morphological traits to partake in ritualized combat.
 - Mantis shrimp present an interesting case in which their unique form of ritualized combat, termed telson sparring, may have coevolved with specialized morphological armour.
+
+## What is COR?
+
+
 
 ## Data Manipulation
 
@@ -80,7 +106,7 @@ ggplot(big_shrimps,aes(x=mass,y=ratio))+
 ggsave("../figures/big_shrimps_figure.jpg")
 ```
 
-## Test
+
 
 
 
